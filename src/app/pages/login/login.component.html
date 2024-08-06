@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card">
+        <h2>Login</h2>
+       
+        <form class="form">
+            <input type="email" [(ngModel)]="loginObj.EmailId" name ="EmailId" placeholder="Email Adress" class="email">
+            <input type="password" [(ngModel)]="loginObj.Password" name= "Password" placeholder="password" class="pass">
+        </form>
+        <a href="#" class="fp">Forgot password?</a>
+        <button type="button" class="login_btn" (click)="onLogin()">Login</button>
+        <div class="footer_card">
+            <p>Not a member?</p>
+            <a href="#">Singup now</a>
+        </div>
+    </div>
+</div>
