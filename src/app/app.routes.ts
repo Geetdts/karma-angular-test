@@ -1,8 +1,7 @@
-
+import { NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
-import { LayoutComponent } from './pages/layout/layout.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { SalesListComponent } from './pages/sales-list/sales-list.component';
 
 export const routes: Routes = [
     {
@@ -13,15 +12,9 @@ export const routes: Routes = [
         component:LoginComponent
     },
     {
-        path:'',
-        component:LayoutComponent,
-        children:[
-            {
-                path:'dashboard',
-                component:DashboardComponent,
-               
-            }
-        ]
+        path:'sales-list',
+        component:SalesListComponent
+        
     }
 ];
 

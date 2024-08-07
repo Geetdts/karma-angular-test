@@ -1,0 +1,61 @@
+/* Custom styles for status badges */
+.badge {
+  padding: 1em 0.75em;
+  font-size: 0.75em;
+  
+}
+.bg-success {
+  background-color: green !important;
+  color: white; /* White font for success badge */
+}
+
+.bg-warning {
+  background-color: yellow;
+  color: black; /* Black font for warning badge */
+}
+
+.bg-danger {
+  background-color: red;
+  color: white; /* White font for danger badge */
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.main-body {
+  font-size: 0.3em;
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  mat-form-field {
+    width: 25%;
+    /* padding-top: 10px; */
+    padding-left: 20px;
+  }
+}
+
+::ng-deep .custom-button {
+  color: white; /* Text color */
+  background-color: #FFA500; /* Light orange background color */
+}
+
+::ng-deep .custom-button:hover {
+  background-color: #FF8C00; /* Darker shade of orange for hover effect */
+}
+
+.search-sort-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  flex-grow: 1;
+
+}
+
+.sort-button {
+  margin-left: 16px; 
+  height: 60px;
+}
+
+

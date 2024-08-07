@@ -1,0 +1,124 @@
+{
+  "sales": [
+    {
+      "id": 1,
+      "customerName": "Thomas",
+      "reference": "SL0101",
+      "paymentDate": "19 Jan 2023",
+      "status": "Completed",
+      "grandTotal": 550,
+      "paid": 550,
+      "due": 0,
+      "paymentStatus": "Paid",
+      "biller": "Admin"
+    },
+    {
+      "id": 2,
+      "customerName": "Rose",
+      "reference": "SL0102",
+      "paymentDate": "26 Jan 2023",
+      "status": "Completed",
+      "grandTotal": 250,
+      "paid": 250,
+      "due": 0,
+      "paymentStatus": "Paid",
+      "biller": "Admin"
+    },
+    {
+      "id": 3,
+      "customerName": "Benjamin",
+      "reference": "SL0103",
+      "paymentDate": "08 Feb 2023",
+      "status": "Completed",
+      "grandTotal": 570,
+      "paid": 570,
+      "due": 0,
+      "paymentStatus": "Paid",
+      "biller": "Admin"
+    },
+    {
+      "id": 4,
+      "customerName": "Lilly",
+      "reference": "SL0104",
+      "paymentDate": "12 Feb 2023",
+      "status": "Pending",
+      "grandTotal": 300,
+      "paid": 0,
+      "due": 300,
+      "paymentStatus": "Due",
+      "biller": "Admin"
+    },
+    {
+      "id": 5,
+      "customerName": "Freda",
+      "reference": "SL0105",
+      "paymentDate": "17 Mar 2023",
+      "status": "Pending",
+      "grandTotal": 700,
+      "paid": 0,
+      "due": 700,
+      "paymentStatus": "Due",
+      "biller": "Admin"
+    },
+    {
+      "id": 6,
+      "customerName": "Alwin",
+      "reference": "SL0106",
+      "paymentDate": "24 Mar 2023",
+      "status": "Completed",
+      "grandTotal": 400,
+      "paid": 400,
+      "due": 0,
+      "paymentStatus": "Paid",
+      "biller": "Admin"
+    },
+    {
+      "id": 7,
+      "customerName": "Maybelle",
+      "reference": "SL0107",
+      "paymentDate": "06 Apr 2023",
+      "status": "Pending",
+      "grandTotal": 120,
+      "paid": 0,
+      "due": 120,
+      "paymentStatus": "Due",
+      "biller": "Admin"
+    },
+    {
+      "id": 8,
+      "customerName": "Gayan Geethanjana",
+      "reference": "1234x",
+      "paymentDate": "2024-08-21T20:00:00.000Z",
+      "status": "Completed",
+      "grandTotal": 5,
+      "paid": 2,
+      "due": 3,
+      "paymentStatus": "Due",
+      "biller": "admin"
+    },
+    {
+      "id": "c4ec",
+      "customerName": "Rafiz",
+      "reference": "SL0256",
+      "paymentDate": "2024-08-07T20:00:00.000Z",
+      "status": "Pending",
+      "grandTotal": 460,
+      "paid": 400,
+      "due": null,
+      "paymentStatus": "Paid",
+      "biller": "Admin"
+    },
+    {
+      "id": "743c",
+      "customerName": "Sahan",
+      "reference": "SL1234",
+      "paymentDate": "2024-08-07T20:00:00.000Z",
+      "status": "Pending",
+      "grandTotal": 500,
+      "paid": 2000,
+      "due": "",
+      "paymentStatus": "",
+      "biller": "Admin"
+    }
+  ]
+}

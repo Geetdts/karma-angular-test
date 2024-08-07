@@ -1,0 +1,54 @@
+<div mat-dialog-title class="content">
+    <h1>Sales Form</h1>
+</div>
+<form [formGroup]="salesForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Customer Name</mat-label>
+                <input matInput type="text" placeholder="Ex. Thomas" formControlName="customerName">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Reference</mat-label>
+                <input matInput type="text" placeholder="Ex. SL0101" formControlName="reference">
+            </mat-form-field>
+        </div>
+        <div class="row-field">
+            <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="paymentDate">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status">
+                    <mat-option value="Completed">Completed</mat-option>
+                    <mat-option value="Pending">Pending</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="row-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Grand Total</mat-label>
+                <input matInput type="number" placeholder="Ex. 550" formControlName="grandTotal">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Paid</mat-label>
+                <input matInput type="number" placeholder="Ex. 550" formControlName="paid">
+            </mat-form-field>
+        </div>
+        <div class="row-field">
+            <mat-form-field appearance="outline">
+                <mat-label>Biller</mat-label>
+                <input matInput type="text" placeholder="Ex. Admin" formControlName="biller">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" (click)="onCancel()">Cancel</button>
+        <button mat-raised-button color="primary">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>
