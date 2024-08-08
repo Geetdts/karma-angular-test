@@ -19,7 +19,7 @@ import { CoreService } from '../../core/core.service';
 interface Sale {
   customerName: string;
   reference: string;
-  date: string;
+  paymentDate: string;
   status: string;
   grandTotal: number;
   paid: number;
@@ -98,6 +98,7 @@ export class SalesListComponent implements OnInit {
       }
     })
   }
+  
 
   deleteSale(id: number) {
     this._salesService.deleteSale(id).subscribe({
@@ -131,6 +132,24 @@ export class SalesListComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-
-
+  sortByDate() {
+    this._salesService.getSalesList().subscribe({
+      next: (res) => {
+        // Sort the fetched data by paymentDate
+        const sortedData = res.sort((a: Sale, b: Sale) => {
+          const dateA = new Date(a.paymentDate);
+          const dateB = new Date(b.paymentDate);
+          return dateA.getTime() - dateB.getTime(); // Ascending order
+        });
+  
+        // Update the data source with the sorted data
+        this.dataSource = new MatTableDataSource(sortedData);
+        this.dataSource.sort = this.sort; 
+        this.dataSource.paginator = this.paginator;
+      },
+      error: (err) => {
+        console.log(err);
+      }
+    });
+  }
 }

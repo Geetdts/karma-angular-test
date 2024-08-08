@@ -1,45 +1,50 @@
-/* Custom styles for status badges */
 .badge {
-  padding: 1em 0.75em;
+  padding: 1em 0.75em !important;
   font-size: 0.75em;
-  
 }
+
 .bg-success {
   background-color: green !important;
   color: white; /* White font for success badge */
 }
+.bg-success-payment{
+  background-color:  white !important;
+  color: green !important;
+  border: 1px solid green !important;
+}
+.bg-success-status{
+  background-color:  green !important;
+  color: white !important;
+  border: 1px solid green !important;
+
+}
 
 .bg-warning {
-  background-color: yellow;
+  background-color: yellow !important;
   color: black; /* Black font for warning badge */
 }
 
-.bg-danger {
-  background-color: red;
-  color: white; /* White font for danger badge */
+.bg-danger-payment {
+  background-color: white !important;
+  color:red !important;  
+  border: 1px solid red !important;
 }
+.bg-danger-status{
+  background-color: rgb(248, 246, 246) !important;
+  color:red !important;  
+  /* border: 1px solid red !important; */
+}
+
+
 .example-spacer {
   flex: 1 1 auto;
 }
+
 .main-body {
   font-size: 0.3em;
   padding-top: 20px;
   margin: 0 auto;
   max-width: 1200px;
-  mat-form-field {
-    width: 25%;
-    /* padding-top: 10px; */
-    padding-left: 20px;
-  }
-}
-
-::ng-deep .custom-button {
-  color: white; /* Text color */
-  background-color: #FFA500; /* Light orange background color */
-}
-
-::ng-deep .custom-button:hover {
-  background-color: #FF8C00; /* Darker shade of orange for hover effect */
 }
 
 .search-sort-container {
@@ -50,7 +55,26 @@
 
 .search-bar {
   flex-grow: 1;
+}
 
+/* Custom styles for search input */
+.search-field {
+  width: 300px; 
+
+}
+
+.search-field .mat-form-field-infix {
+  height: 40px !important;; 
+  line-height: 40px !important; 
+}
+
+.search-field input {
+  font-size: 16px; 
+  height: 100%; 
+}
+
+.search-field .mat-form-field-label {
+  font-size: 14px; 
 }
 
 .sort-button {
@@ -58,4 +82,32 @@
   height: 60px;
 }
 
+/* Custom styles for buttons */
+.custom-button {
+  color: white !important;
+  background-color: #FFA500 !important; 
+}
+.custom-button-sort {
+  color: rgb(7, 0, 0) !important;
+  background-color: white !important;
+  border: 1px solid rgb(52, 48, 48) !important;
+  margin-left: 10px;
+}
 
+.custom-button:hover {
+  background-color: #FF8C00;
+}
+
+.custom-button mat-icon {
+  margin-left: 8px; 
+}
+
+/* Custom styles for input fields */
+::ng-deep .search-field .mat-form-field {
+  width: 300px; 
+  height: 40px; 
+}
+
+::ng-deep .mat-input-element {
+  height: 40px; 
+}

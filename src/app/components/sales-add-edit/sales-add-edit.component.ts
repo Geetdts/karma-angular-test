@@ -15,6 +15,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../../core/core.service';
+import { Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
 
 
 @Component({
@@ -29,7 +32,7 @@ import { CoreService } from '../../core/core.service';
     MatRadioModule,
     MatSelectModule,
     ReactiveFormsModule,
-
+    CommonModule
   ],
   providers: [
     { provide: DateAdapter, useClass: NativeDateAdapter },
@@ -51,15 +54,12 @@ export class SalesAddEditComponent implements OnInit {
     private _coreService: CoreService
   ) {
     this.salesForm = this._fb.group({
-      customerName: '',
-      reference: '',
-      paymentDate: '',
-      status: '',
-      grandTotal: '',
-      paid: '',
-      due: '',
-      paymentStatus: '',
-      biller: ''
+      customerName: ['', Validators.required],  
+    paymentDate: ['', Validators.required],    
+    status: ['', Validators.required],         
+    grandTotal: [0, [Validators.required, Validators.min(0)]], 
+    paid: [0, [Validators.required, Validators.min(0)]],         
+    biller: ['', Validators.required]          
     })
   }
 

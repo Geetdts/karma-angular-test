@@ -119,6 +119,17 @@
       "due": "",
       "paymentStatus": "",
       "biller": "Admin"
+    },
+    {
+      "id": "3816",
+      "customerName": "cxc",
+      "paymentDate": "2024-08-19T20:00:00.000Z",
+      "status": "Completed",
+      "grandTotal": 2000,
+      "paid": 3000,
+      "biller": "admin",
+      "due": -1000,
+      "paymentStatus": "Due"
     }
   ]
 }

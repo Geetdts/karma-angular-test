@@ -1,15 +1,42 @@
 <div class="container">
     <div class="card">
-        <h2>Login</h2>     
-        <form class="form">
-            <input type="email" [(ngModel)]="loginObj.EmailId" name ="EmailId" placeholder="Email Adress" class="email">
-            <input type="password" [(ngModel)]="loginObj.Password" name= "Password" placeholder="password" class="pass">
+        <h2>Login</h2>
+        <form class="form" #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+            <input 
+                type="email" 
+                [(ngModel)]="loginObj.EmailId" 
+                name="EmailId" 
+                placeholder="Email Address" 
+                class="email" 
+                required 
+                email 
+                #email="ngModel">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error-message">
+                <div *ngIf="email.errors?.['required']">Email is required.</div>
+                <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+            </div>
+            <input 
+                type="password" 
+                [(ngModel)]="loginObj.Password" 
+                name="Password" 
+                placeholder="Password" 
+                class="pass" 
+                required 
+                minlength="6" 
+                #password="ngModel">
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error-message">
+                <div *ngIf="password.errors?.['required']">Password is required.</div>
+                <div *ngIf="password.errors?.['minlength']">Password must be at least 6 characters long.</div>
+            </div>
+            <button 
+                type="submit" 
+                class="login_btn" 
+                [disabled]="loginForm.invalid">Login</button>
         </form>
         <a href="#" class="fp">Forgot password?</a>
-        <button type="button" class="login_btn" (click)="onLogin()">Login</button>
         <div class="footer_card">
             <p>Not a member?</p>
-            <a href="#">Singup now</a>
+            <a href="#">Signup now</a>
         </div>
     </div>
 </div>
