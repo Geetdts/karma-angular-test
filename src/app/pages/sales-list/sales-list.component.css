@@ -11,15 +11,20 @@
 
 .bg-success-payment {
   background-color: white !important;
-  color: green !important;
-  border: 1px solid green !important;
+  color: rgb(46,197,110)!important;
+  border: 1px solid rgb(46,197,110)!important;
+  padding: 0.5em 0.5em !important;
+  font-size: 0.75em;
+  border-radius: 0.5em;
 }
 
 .bg-success-status {
-  background-color: green !important;
+  background-color: rgb(46,197,110)!important;
   color: white !important;
-  border: 1px solid green !important;
-
+  border: 1px solid rgb(46,197,110)!important;
+  padding: 0.5em 0.5em !important;
+  font-size: 0.75em;
+  border-radius: 0.5em;
 }
 
 .bg-warning {
@@ -60,6 +65,8 @@
 
 .search-bar {
   flex-grow: 1;
+  height: 50px;
+  margin-bottom: 20px;
 }
 
 /* Custom styles for search input */
@@ -129,4 +136,27 @@
 .title {
   margin-left: 20px;
   margin-top: 10px;
+  font-size: medium;
+}
+.custom-mini-fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;  
+  height: 35px; 
+  background-color: white !important; 
+  color: rgb(66, 65, 65) !important; 
+  border: 1px  rgb(66, 65, 65); 
+  border-radius: 5px !important; 
+  box-shadow: none; 
+  margin-right: 5px;
+}
+
+.custom-mini-fab:hover {
+  background-color: #f0f0f0 !important; 
+  color: black !important; 
+}
+
+.custom-mini-fab mat-icon {
+  font-size: 24px; 
 }

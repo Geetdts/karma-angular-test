@@ -22,6 +22,7 @@ This is a simple Angular application designed to demonstrate user authentication
 - Angular 17.
 - Angular Material.
 - RxJS for handling asynchronous data streams.
+- JSON Server used to load static data through API.
 
 ## Development server
 

@@ -4,6 +4,23 @@
     <div class="manage-sales-title">Manage Your Sales</div>
   </div>
   <span class="example-spacer"></span>
+  <div>
+    <button mat-mini-fab class="custom-mini-fab" aria-label="">
+      <mat-icon>picture_as_pdf</mat-icon>
+    </button>
+    <button mat-mini-fab class="custom-mini-fab" aria-label="">
+      <mat-icon>list</mat-icon>
+    </button>
+    <button mat-mini-fab class="custom-mini-fab" aria-label="">
+      <mat-icon>print</mat-icon>
+    </button>
+    <button mat-mini-fab class="custom-mini-fab" aria-label="">
+      <mat-icon>replay</mat-icon>
+    </button>
+    <button mat-mini-fab class="custom-mini-fab" aria-label="">
+      <mat-icon>keyboard_arrow_up</mat-icon>
+    </button>
+  </div>
   <button mat-flat-button (click)="openAddEditSalesForm()" class="custom-button">
     <mat-icon>add_circle</mat-icon>
     Add New Sales
@@ -60,8 +77,10 @@
       <ng-container matColumnDef="status">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
         <td mat-cell *matCellDef="let sale">
-          <span
-            [ngClass]="{ 'badge bg-success-status': sale.status === 'Completed', 'badge bg-danger-status text-dark': sale.status === 'Pending' }">
+          <span [ngClass]="{ 
+              'badge bg-success-status': sale.status === 'Completed',
+               'badge bg-danger-status text-dark': sale.status === 'Pending'
+               }">
             {{sale.status}}
           </span>
         </td>

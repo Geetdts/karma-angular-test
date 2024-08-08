@@ -15,7 +15,7 @@ export const routes: Routes = [
     {
         path:'sales-list',
         component:SalesListComponent,
-        canActivate: [AuthGuardService]
+        
     }
 ];
 
