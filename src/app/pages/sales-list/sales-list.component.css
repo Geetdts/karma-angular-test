@@ -1,0 +1,162 @@
+.badge {
+  padding: 1em 0.75em !important;
+  font-size: 0.75em;
+}
+
+.bg-success {
+  background-color: green !important;
+  color: white;
+  /* White font for success badge */
+}
+
+.bg-success-payment {
+  background-color: white !important;
+  color: rgb(46,197,110)!important;
+  border: 1px solid rgb(46,197,110)!important;
+  padding: 0.5em 0.5em !important;
+  font-size: 0.75em;
+  border-radius: 0.5em;
+}
+
+.bg-success-status {
+  background-color: rgb(46,197,110)!important;
+  color: white !important;
+  border: 1px solid rgb(46,197,110)!important;
+  padding: 0.5em 0.5em !important;
+  font-size: 0.75em;
+  border-radius: 0.5em;
+}
+
+.bg-warning {
+  background-color: yellow !important;
+  color: black;
+  /* Black font for warning badge */
+}
+
+.bg-danger-payment {
+  background-color: white !important;
+  color: red !important;
+  border: 1px solid red !important;
+}
+
+.bg-danger-status {
+  background-color: rgb(248, 246, 246) !important;
+  color: red !important;
+  /* border: 1px solid red !important; */
+}
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-body {
+  font-size: 0.3em;
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.search-sort-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  flex-grow: 1;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+/* Custom styles for search input */
+.search-field {
+  width: 300px;
+
+}
+
+.search-field .mat-form-field-infix {
+  height: 40px !important;
+  ;
+  line-height: 40px !important;
+}
+
+.search-field input {
+  font-size: 16px;
+  height: 100%;
+}
+
+.search-field .mat-form-field-label {
+  font-size: 14px;
+}
+
+.sort-button {
+  margin-left: 16px;
+  height: 60px;
+}
+
+/* Custom styles for buttons */
+.custom-button {
+  color: white !important;
+  background-color: #FFA500 !important;
+  margin-right: 20px;
+}
+
+.custom-button-sort {
+  color: rgb(7, 0, 0) !important;
+  background-color: white !important;
+  border: 1px solid rgb(52, 48, 48) !important;
+
+}
+
+.custom-button:hover {
+  background-color: #FF8C00;
+}
+
+.custom-button mat-icon {
+  margin-left: 8px;
+}
+
+/* Custom styles for input fields */
+::ng-deep .search-field .mat-form-field {
+  width: 300px;
+  height: 40px;
+}
+
+::ng-deep .mat-input-element {
+  height: 40px;
+}
+
+.manage-sales-title {
+  font-size: 10px;
+  color: #333;
+  margin-top: -15px;
+}
+
+.title {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: medium;
+}
+.custom-mini-fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;  
+  height: 35px; 
+  background-color: white !important; 
+  color: rgb(66, 65, 65) !important; 
+  border: 1px  rgb(66, 65, 65); 
+  border-radius: 5px !important; 
+  box-shadow: none; 
+  margin-right: 5px;
+}
+
+.custom-mini-fab:hover {
+  background-color: #f0f0f0 !important; 
+  color: black !important; 
+}
+
+.custom-mini-fab mat-icon {
+  font-size: 24px; 
+}

@@ -1,0 +1,17 @@
+/* Custom styles for delete button */
+.custom-button-delete {
+    color: white !important;
+    background-color: #FF0000 !important;
+    border: 1px solid #FF0000 !important;
+}
+
+.custom-button-delete:hover {
+    background-color: #690808;
+}
+
+.custom-button-delete:disabled {
+    color: #999999 !important;
+    background-color: #dddddd !important;
+    border: 1px solid #cccccc !important;
+    cursor: not-allowed !important;
+}
