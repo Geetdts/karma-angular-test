@@ -1,23 +1,49 @@
 .content {
-    padding: 10px;
-  }
-.row-field {
-    display: flex;
-    gap: 10px;
-    padding: 10px;
+  padding: 10px;
+}
 
-    mat-form-field {
-      width: 100%;
-    }
+.row-field {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+
+  mat-form-field {
+    width: 100%;
   }
-  
-  .action {
-    display: flex;
-    
-    gap: 10px;
-    padding: 0px 20px 20px;
-    button {
-      flex: 1;
-    }
+}
+
+.action {
+  display: flex;
+
+  gap: 10px;
+  padding: 0px 20px 20px;
+
+  button {
+    flex: 1;
   }
-  
+}
+
+/* Custom styles for buttons */
+.custom-button {
+  color: white !important;
+  background-color: #FFA500 !important;
+}
+
+.custom-button-sort {
+  color: rgb(7, 0, 0) !important;
+  background-color: white !important;
+  border: 1px solid rgb(52, 48, 48) !important;
+  margin-left: 10px;
+}
+
+.custom-button:hover {
+  background-color: #FF8C00;
+}
+
+.custom-button:disabled,
+.custom-button-sort:disabled {
+  color: #999999 !important;
+  background-color: #dddddd !important;
+  border: 1px solid #cccccc !important;
+  cursor: not-allowed !important;
+}

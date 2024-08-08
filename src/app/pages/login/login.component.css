@@ -15,8 +15,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%; 
+  max-width: 1800px; 
   overflow: hidden;
+  margin: 0 auto; 
 }
 
 .card {
@@ -33,13 +35,13 @@
 
 .card h2 {
   margin-bottom: 10px;
-  color: #2e3b4e; /* Change to match container background */
+  color: #2e3b4e;
 }
 
 .card a.fp {
   width: 100%;
   display: flex;
-  color: #ff8800; /* Change to match login button */
+  color: #ff8800;
 }
 
 .login_register {
@@ -60,14 +62,14 @@
 
 .login_register a.login {
   border-radius: 15px;
-  background: linear-gradient(90deg, #ff8800, #ffbb33); /* Change to orange gradient */
+  background: linear-gradient(90deg, #ff8800, #ffbb33);
   color: white;
 }
 
 .login_register a.register {
   border-radius: 15px;
   background-color: transparent;
-  color: #2e3b4e; /* Change to match container background */
+  color: #2e3b4e;
 }
 
 .form {
@@ -80,7 +82,7 @@
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #DDDDDD;
-  color: #2e3b4e; /* Change to match container background */
+  color: #2e3b4e;
   font-family: "Roboto Mono", sans-serif;
   box-shadow: 1px 5px 9px rgba(211, 211, 211, .7);
 }
@@ -105,7 +107,22 @@
   margin-bottom: 15px;
   background: linear-gradient(-90deg, #ff8800, #ffbb33); /* Change to orange gradient */
   box-shadow: 1px 5px 9px rgba(211, 211, 211, .9);
+  transition: background 0.3s ease; /* Smooth transition for hover effect */
 }
+
+/* Hover state for the button */
+.login_btn:hover {
+  background: linear-gradient(-90deg, #ffbb33, #ff8800); /* Change gradient direction on hover */
+}
+
+/* Disabled state for the button */
+.login_btn:disabled {
+  color: #999999; /* Gray text color */
+  background: #dddddd; /* Light gray background */
+  border: none; /* No border */
+  cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+}
+
 
 .footer_card {
   display: flex;
@@ -115,14 +132,13 @@
 
 .footer_card p {
   margin-right: 10px;
-  color: #2e3b4e; /* Change to match container background */
+  color: #2e3b4e;
 }
 
 .footer_card a {
-  color: #ff8800; /* Change to match login button */
+  color: #ff8800;
 }
 
-/* Add styles for error messages */
 .error-message {
   color: red;
   font-size: 0.9em;

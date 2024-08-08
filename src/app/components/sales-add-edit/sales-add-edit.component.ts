@@ -54,21 +54,25 @@ export class SalesAddEditComponent implements OnInit {
     private _coreService: CoreService
   ) {
     this.salesForm = this._fb.group({
-      customerName: ['', Validators.required],  
-    paymentDate: ['', Validators.required],    
-    status: ['', Validators.required],         
-    grandTotal: [0, [Validators.required, Validators.min(0)]], 
-    paid: [0, [Validators.required, Validators.min(0)]],         
-    biller: ['', Validators.required]          
+      customerName: ['', Validators.required],
+      paymentDate: ['', Validators.required],
+      status: ['', Validators.required],
+      grandTotal: [0, [Validators.required, Validators.min(0)]],
+      paid: [0, [Validators.required, Validators.min(0)]],
+      biller: ['', Validators.required]
     })
   }
 
-  //submit add,edit sales 
+  /**
+  * Handles the form submission for adding or updating sales.
+  * If the form is valid, calculates due and payment status,
+  * then either updates an existing sale or adds a new sale.
+  * Displays a snackbar notification upon success and closes the dialog.
+  */
   onFormSubmit() {
     if (this.salesForm.valid) {
       const formData = this.calculateDueAndPaymentStatus(this.salesForm.value);
       if (this.data) {
-
         this._salesService
           .updateSales(this.data.id, formData)
           .subscribe({
@@ -81,7 +85,6 @@ export class SalesAddEditComponent implements OnInit {
             },
           });
       } else {
-
         this._salesService.addSales(formData).subscribe({
           next: (val: any) => {
             this._coreService.openSnackBar("Sale added successfully");
@@ -90,13 +93,19 @@ export class SalesAddEditComponent implements OnInit {
           error: (err: any) => {
             console.error(err);
           }
-
         })
       }
     }
   }
-  //Calculate Due and payment status
-  //this should be done in backend ,hence we are using static data here, we dit it frontend 
+
+  /**
+   * Calculates the due amount and payment status based on the form data.
+   * This calculation is typically handled in the backend, but is performed
+   * here on the frontend for demonstration purposes using static data.
+   * 
+   * @param formData - The sales form data containing grandTotal and paid amounts.
+   * @returns An object containing the original form data along with calculated due and payment status.
+   */
   private calculateDueAndPaymentStatus(formData: any): any {
     const grandTotal = formData.grandTotal || 0;
     const paid = formData.paid || 0;

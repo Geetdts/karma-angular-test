@@ -5,15 +5,18 @@
 
 .bg-success {
   background-color: green !important;
-  color: white; /* White font for success badge */
+  color: white;
+  /* White font for success badge */
 }
-.bg-success-payment{
-  background-color:  white !important;
+
+.bg-success-payment {
+  background-color: white !important;
   color: green !important;
   border: 1px solid green !important;
 }
-.bg-success-status{
-  background-color:  green !important;
+
+.bg-success-status {
+  background-color: green !important;
   color: white !important;
   border: 1px solid green !important;
 
@@ -21,17 +24,19 @@
 
 .bg-warning {
   background-color: yellow !important;
-  color: black; /* Black font for warning badge */
+  color: black;
+  /* Black font for warning badge */
 }
 
 .bg-danger-payment {
   background-color: white !important;
-  color:red !important;  
+  color: red !important;
   border: 1px solid red !important;
 }
-.bg-danger-status{
+
+.bg-danger-status {
   background-color: rgb(248, 246, 246) !important;
-  color:red !important;  
+  color: red !important;
   /* border: 1px solid red !important; */
 }
 
@@ -59,39 +64,42 @@
 
 /* Custom styles for search input */
 .search-field {
-  width: 300px; 
+  width: 300px;
 
 }
 
 .search-field .mat-form-field-infix {
-  height: 40px !important;; 
-  line-height: 40px !important; 
+  height: 40px !important;
+  ;
+  line-height: 40px !important;
 }
 
 .search-field input {
-  font-size: 16px; 
-  height: 100%; 
+  font-size: 16px;
+  height: 100%;
 }
 
 .search-field .mat-form-field-label {
-  font-size: 14px; 
+  font-size: 14px;
 }
 
 .sort-button {
-  margin-left: 16px; 
+  margin-left: 16px;
   height: 60px;
 }
 
 /* Custom styles for buttons */
 .custom-button {
   color: white !important;
-  background-color: #FFA500 !important; 
+  background-color: #FFA500 !important;
+  margin-right: 20px;
 }
+
 .custom-button-sort {
   color: rgb(7, 0, 0) !important;
   background-color: white !important;
   border: 1px solid rgb(52, 48, 48) !important;
-  margin-left: 10px;
+
 }
 
 .custom-button:hover {
@@ -99,15 +107,26 @@
 }
 
 .custom-button mat-icon {
-  margin-left: 8px; 
+  margin-left: 8px;
 }
 
 /* Custom styles for input fields */
 ::ng-deep .search-field .mat-form-field {
-  width: 300px; 
-  height: 40px; 
+  width: 300px;
+  height: 40px;
 }
 
 ::ng-deep .mat-input-element {
-  height: 40px; 
+  height: 40px;
+}
+
+.manage-sales-title {
+  font-size: 10px;
+  color: #333;
+  margin-top: -15px;
+}
+
+.title {
+  margin-left: 20px;
+  margin-top: 10px;
 }

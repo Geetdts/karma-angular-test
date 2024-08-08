@@ -15,6 +15,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CoreService } from '../../core/core.service';
+import { DeleteConfirmDialogComponent } from '../../components/delete-confirm-dialog/delete-confirm-dialog.component';
 
 interface Sale {
   customerName: string;
@@ -73,6 +74,17 @@ export class SalesListComponent implements OnInit {
     private _salesService: SalesService,
     private _coreService: CoreService
   ) { }
+
+  ngOnInit(): void {
+    this.getSalesList();
+  }
+  /**
+ * Opens the Add/Edit Sales form in a dialog.
+ * 
+ * Opens a dialog containing the SalesAddEditComponent. 
+ * After the dialog is closed, it refreshes the sales list if 
+ * there were changes (indicated by a truthy value returned).
+ */
   openAddEditSalesForm() {
     const dialogRef = this._dialog.open(SalesAddEditComponent);
     dialogRef.afterClosed().subscribe({
@@ -83,9 +95,11 @@ export class SalesListComponent implements OnInit {
       }
     })
   }
-  ngOnInit(): void {
-    this.getSalesList();
-  }
+
+  /**
+ * Fetches the list of sales from the sales service, updates the data source 
+ * for the table, and sets up sorting and pagination.
+ */
   getSalesList() {
     this._salesService.getSalesList().subscribe({
       next: (res) => {
@@ -98,23 +112,40 @@ export class SalesListComponent implements OnInit {
       }
     })
   }
-  
 
+  /**
+ * Opens a confirmation dialog to delete a sale. If confirmed, deletes the sale 
+ * with the specified ID and refreshes the sales list.
+ * 
+ * @param id - The ID of the sale to be deleted.
+ */
   deleteSale(id: number) {
-    this._salesService.deleteSale(id).subscribe({
-      next: (res) => {
-        this._coreService.openSnackBar('Sale deleted!', 'done');
-        this.getSalesList();
-      },
-      error: console.log,
+    const dialogRef = this._dialog.open(DeleteConfirmDialogComponent);
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        this._salesService.deleteSale(id).subscribe({
+          next: (res) => {
+            this._coreService.openSnackBar('Sale deleted!', 'done');
+            this.getSalesList();
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
+      }
     });
   }
 
+  /**
+ * Opens the edit sales form in a dialog, passing the selected sale data.
+ * Refreshes the sales list if the dialog is closed with a value.
+ * 
+ * @param data - The sales data to be edited.
+ */
   openEditForm(data: any) {
     const dialogRef = this._dialog.open(SalesAddEditComponent, {
       data,
     });
-
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
@@ -124,7 +155,7 @@ export class SalesListComponent implements OnInit {
     });
   }
 
-  // filetr for table
+  // filetr table data
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -132,6 +163,8 @@ export class SalesListComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+
+  //Sort list by date
   sortByDate() {
     this._salesService.getSalesList().subscribe({
       next: (res) => {
@@ -141,10 +174,10 @@ export class SalesListComponent implements OnInit {
           const dateB = new Date(b.paymentDate);
           return dateA.getTime() - dateB.getTime(); // Ascending order
         });
-  
+
         // Update the data source with the sorted data
         this.dataSource = new MatTableDataSource(sortedData);
-        this.dataSource.sort = this.sort; 
+        this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
       error: (err) => {

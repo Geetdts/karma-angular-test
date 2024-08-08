@@ -1,15 +1,18 @@
 <mat-toolbar>
-  <span>Sales List</span>
+  <div class="title">
+    <div><span>Sales List</span></div>
+    <div class="manage-sales-title">Manage Your Sales</div>
+  </div>
   <span class="example-spacer"></span>
   <button mat-flat-button (click)="openAddEditSalesForm()" class="custom-button">
-    <mat-icon>add</mat-icon>
+    <mat-icon>add_circle</mat-icon>
     Add New Sales
   </button>
 </mat-toolbar>
 <div class="main-body">
   <div class="search-sort-container">
     <div class="search-bar">
-      <mat-form-field appearance="outline"  class="search-field">
+      <mat-form-field appearance="outline" class="search-field">
         <mat-label>Search</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
         <button mat-icon-button matSuffix (click)="input.value=''">
