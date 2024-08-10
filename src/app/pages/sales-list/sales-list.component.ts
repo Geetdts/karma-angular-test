@@ -103,7 +103,8 @@ export class SalesListComponent implements OnInit {
   getSalesList() {
     this._salesService.getSalesList().subscribe({
       next: (res) => {
-        this.dataSource = new MatTableDataSource(res);
+
+        this.dataSource = new MatTableDataSource(res.data);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
