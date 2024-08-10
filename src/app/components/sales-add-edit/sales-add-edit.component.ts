@@ -56,7 +56,6 @@ export class SalesAddEditComponent implements OnInit {
     this.salesForm = this._fb.group({
       customerName: ['', Validators.required],
       paymentDate: ['', Validators.required],
-      status: ['', Validators.required],
       grandTotal: [0, [Validators.required, Validators.min(0)]],
       paid: [0, [Validators.required, Validators.min(0)]],
       biller: ['', Validators.required]
